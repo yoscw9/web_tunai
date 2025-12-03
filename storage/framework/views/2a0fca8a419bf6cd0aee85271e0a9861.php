@@ -1,0 +1,21 @@
+<?php if(session('success')): ?>
+<div class="alert alert-success">
+    <?php echo e(session('success')); ?>
+
+</div>
+<?php endif; ?>
+<?php if(session('error')): ?>
+<div class="alert alert-danger">
+    <?php echo e(session('error')); ?>
+
+</div>
+<?php endif; ?>
+<?php if($errors->any()): ?>
+<div class="alert alert-danger">
+    <ul class="mb-0 ps-4">
+        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $message): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <li><?php echo e($message); ?></li>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </ul>
+</div>
+<?php endif; ?><?php /**PATH C:\xampp\htdocs\tunai_app\resources\views/admin/components/alert.blade.php ENDPATH**/ ?>
